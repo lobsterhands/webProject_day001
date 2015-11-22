@@ -4,7 +4,8 @@
 // Todo: selecting a door already opened is nish nish
 // Todo: refactor
 // Todo: Add highlight on short timer when text changes
-// Todo: Add reset button
+// Todo: Move all html into js start-state
+// Todo: Reset button should reset state
 
 (function() {
 
