@@ -16,12 +16,23 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<h1>3 Doors</h1>
+<h1>Three Doors</h1>
 
-<div id="threeDoors">
-    <img class="door door1" onClick="showGoat(this)" src="img/door1.png">
-    <img class="door door2" onClick="showGoat(this)" src="img/door2.png">
-    <img class="door door3" onClick="showGoat(this)" src="img/door3.png">
+<p id="gameWords">Hello and welcome to Three Doors. Only one of these doors is the Winning Door! The rules are simple:
+            Please select a door.</p>
+
+<div id="container">
+
+    <div id="threeDoors">
+        <img class="door door1" src="img/door1.png">
+        <img class="door door2" src="img/door2.png">
+        <img class="door door3" src="img/door3.png">
+    </div>
+
+    <div id="resetBtn" class="hide">
+        <button id="button" class="reset-btn">play again</button>
+    </div>
+
 </div>
 
 <script src="js/main.js"></script>

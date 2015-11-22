@@ -91,22 +91,53 @@ textarea {
 .door {
     max-height: 500px;
     margin: 20px;
+    max-width: 400px;
 }
 
+h1 {
+    font-size: 6em;
+    text-align: center;
+}
 
+#container {
+    width: 1200px; /*can be in percentage also.*/
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
 
+#threeDoors {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 
+#gameWords {
+    text-align: center;
+    font-size: 2em;
+}
 
+#resetBtn {
+    text-align: center;
+    text-decoration: none;
+}
 
+.reset-btn {
+    margin: 60px;
+    padding: 10px;
+    font-size: 3em;
+    background: lightgray;
+    border: 1px solid black;
+}
 
+.hide {
+    display: none;
+}
 
-
-
-
-
-
-
-
+.show {
+    display: block;
+}
 
 /* ==========================================================================
    Helper classes
