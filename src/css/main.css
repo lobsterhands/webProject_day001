@@ -123,7 +123,7 @@ h1 {
     text-decoration: none;
 }
 
-.reset-btn {
+#reset-btn {
     margin: 60px;
     padding: 10px;
     font-size: 3em;

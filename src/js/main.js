@@ -1,7 +1,6 @@
 // Author: Lyle Denman
 // Start: 21 November 2015
 
-// Todo: selecting a door already opened is nish nish
 // Todo: refactor
 // Todo: Add highlight on short timer when text changes
 // Todo: Move all html into js start-state
@@ -52,6 +51,8 @@
 
     var gameWords = document.getElementById('gameWords');
     function openFirstDoor(door) {
+        // Remove class items to avoid calling openDoor() on same door twice
+        door.className = "";
         door.src = "img/goat.png";
         gameWords.innerHTML = "I've opened one of the losing doors to reveal: a well-formed goat. \<br> You can now " +
             "select either the same door or you may choose the other door. The choice is up to you.";
@@ -67,18 +68,14 @@
         }
     }
 
-    function playAgain() {
-        window.location.reload();
-    }
-
     document.getElementById('threeDoors').addEventListener('click', function(e) {
         if (e.target.className.indexOf("door") >= 0 && e.target.nodeName == "IMG") {
             openDoor(e.target);
         }
     });
 
-    document.getElementById('button').addEventListener('click', function() {
-        playAgain();
+    document.getElementById('reset-btn').addEventListener('click', function() {
+        window.location.reload();
     });
 
 
