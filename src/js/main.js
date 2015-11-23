@@ -1,18 +1,12 @@
 // Author: Lyle Denman
 // Start: 21 November 2015
 
-// Todo: refactor
-// Todo: Add highlight on short timer when text changes
-// Todo: Move all html into js start-state
-// Todo: Reset button should reset state
-
 (function() {
 
-    var goatDoors = [];
-
-    var child = document.getElementById('threeDoors').children;
-
     var winDoor = Math.floor((Math.random() * 3) + 1);
+    var goatDoors = []; // Holds losing doors
+    var child = document.getElementById('threeDoors').children;
+    var gameText = document.getElementById('gameText');
 
     for (var i = 1; i <= 3; i++) {
         if (i != winDoor) {
@@ -20,9 +14,10 @@
         }
     }
 
-    var count = 0;
+    var doorsOpened = 0;
     function openDoor(doorEl) {
-        if (count == 0) {
+
+        if (doorsOpened == 0) {
             for (var door in goatDoors) {
                 // If the selected door is found in the goatDoors list:
                 if (doorEl.className.indexOf(goatDoors[door]) != -1) {
@@ -33,39 +28,29 @@
 
             // Open one of the doors or the only door in the goatDoors list
             var showDoor = Math.floor(Math.random() * goatDoors.length);
-            openFirstDoor(child[goatDoors[showDoor]-1]);
+            var doorOne = child[goatDoors[showDoor]-1];
+            // Remove class names to avoid calling openDoor() on same door twice
+            doorOne.className = "";
+            doorOne.src = "img/goat.png";
+            gameText.innerHTML = "I've opened one of the losing doors to reveal: a well-formed goat. \<br> You can now " +
+                "select either the same door again or you may choose the other door. \<br> The choice is up to you.";
         }
 
-        if (count == 1) {
-            var win = (-1 != doorEl.className.indexOf(winDoor.toString()));
-            openSecondDoor(doorEl, win);
-        }
+        if (doorsOpened == 1) {
+            var didWin = (-1 != doorEl.className.indexOf(winDoor.toString()));
+            if (didWin) {
+                gameText.innerHTML = "Congratulations! You win a brand new car!";
+                doorEl.src = "img/car.png";
+            } else {
+                gameText.innerHTML = "Oh, no! You picked the wrong door. As a consolation prize, please keep these goats.";
+                doorEl.src = "img/goat.png";
+            }
 
-        count++;
-
-        if (count == 2) {
             var button = document.getElementById('resetBtn');
             button.className += " show";
         }
-    }
 
-    var gameWords = document.getElementById('gameWords');
-    function openFirstDoor(door) {
-        // Remove class items to avoid calling openDoor() on same door twice
-        door.className = "";
-        door.src = "img/goat.png";
-        gameWords.innerHTML = "I've opened one of the losing doors to reveal: a well-formed goat. \<br> You can now " +
-            "select either the same door or you may choose the other door. The choice is up to you.";
-    }
-
-    function openSecondDoor(door, didWin) {
-        if (didWin) {
-            gameWords.innerHTML = "Congratulations! You win a brand new car!";
-            door.src = "img/car.png";
-        } else {
-            gameWords.innerHTML = "Oh, no! You picked the wrong door. As a consolation prize, please keep these goats.";
-            door.src = "img/goat.png";
-        }
+        doorsOpened++;
     }
 
     document.getElementById('threeDoors').addEventListener('click', function(e) {
@@ -77,7 +62,5 @@
     document.getElementById('reset-btn').addEventListener('click', function() {
         window.location.reload();
     });
-
-
 
 })();

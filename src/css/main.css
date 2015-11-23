@@ -89,18 +89,18 @@ textarea {
    ========================================================================== */
 
 .door {
-    max-height: 500px;
-    margin: 20px;
+    max-height: 300px;
     max-width: 400px;
+    margin: 20px;
 }
 
 h1 {
-    font-size: 6em;
+    font-size: 3em;
     text-align: center;
 }
 
 #container {
-    width: 1200px; /*can be in percentage also.*/
+    width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 10px;
@@ -108,14 +108,13 @@ h1 {
 }
 
 #threeDoors {
-    width: 100%;
-    margin: 0 auto;
     text-align: center;
 }
 
-#gameWords {
+#gameText {
+    height: 100px;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 #resetBtn {
@@ -126,7 +125,7 @@ h1 {
 #reset-btn {
     margin: 60px;
     padding: 10px;
-    font-size: 3em;
+    font-size: 1em;
     background: lightgray;
     border: 1px solid black;
 }
