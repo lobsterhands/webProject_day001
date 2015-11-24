@@ -222,6 +222,12 @@ h1 {
 
 @media only screen and (max-width: 700px) {
     /* Style adjustments for viewports that meet the condition */
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
     #gameText {
         font-size: 1em;
     }
