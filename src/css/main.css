@@ -99,7 +99,7 @@ h1 {
 
 #container {
     width: 100%;
-    height: auto;
+    height: 100%;
     margin: 0 auto;
     padding: 10px;
     position: relative;
@@ -228,11 +228,33 @@ h1 {
 
     .door {
         margin: 5px;
+        padding: 5px;
     }
 
     #threeDoors img {
         max-height: 100px;
-        max-width: 100px;
+        max-width: 70px;
+    }
+
+    #gameText img {
+        max-height: 300px;
+    }
+
+    #resetBtn {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    #reset-btn {
+        margin: 0;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
     }
 
 }
