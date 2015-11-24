@@ -110,9 +110,9 @@ h1 {
 }
 
 #gameText {
-    height: 100px;
     text-align: center;
     font-size: 24px;
+    margin: 10px;
 }
 
 #gameText img {
@@ -125,7 +125,7 @@ h1 {
 }
 
 #reset-btn {
-    margin: 60px;
+    margin: 30px;
     padding: 10px;
     font-size: 1em;
     background: lightgray;
@@ -230,6 +230,8 @@ h1 {
 
     #gameText {
         font-size: 1em;
+        margin: 0;
+        padding: 0;
     }
 
     .door {
@@ -241,28 +243,6 @@ h1 {
         max-height: 100px;
         max-width: 70px;
     }
-
-    #gameText img {
-        max-height: 300px;
-    }
-
-    #resetBtn {
-        text-align: center;
-        text-decoration: none;
-    }
-
-    #reset-btn {
-        margin: 0;
-    }
-
-    .hide {
-        display: none;
-    }
-
-    .show {
-        display: block;
-    }
-
 }
 
 @media print,
