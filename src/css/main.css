@@ -125,7 +125,7 @@ h1 {
 }
 
 #reset-btn {
-    margin: 30px;
+    margin: 30px 0 0 0;
     padding: 10px;
     font-size: 1em;
     background: lightgray;
@@ -229,6 +229,47 @@ h1 {
     }
 
     #gameText {
+        font-size: 1.2em;
+        margin: 16px;
+    }
+
+    .door {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    #threeDoors img {
+        max-height: 160px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    #gameText {
+        font-size: 1.2em;
+        margin: 16px;
+    }
+
+    .door {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    #threeDoors img {
+        max-height: 140px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    /* Style adjustments for viewports that meet the condition */
+
+    #gameText {
         font-size: 1em;
         margin: 0;
         padding: 0;
@@ -244,6 +285,7 @@ h1 {
         max-width: 70px;
     }
 }
+
 
 @media print,
 (min-resolution: 1.25dppx),
